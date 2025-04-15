@@ -9,25 +9,30 @@ class RolaDados:
         if seed == 0:
             self.__dados = [Dado() for _ in range(0, n)]
         else:
-            self.__dados = [Dado(6, r.randint()) for _ in range(0, n)]
+            self.__dados = [Dado(n=6, seed=r.randint(1,10000)) for _ in range(0, n)]
     
-    def rolar(self, quais : list[bool] | str) -> list[int]:
+    def rolar(self, quais : list[bool] | str | None = None) -> list[int]:
+        if quais == None:
+            ok : list[int] = [0] * len(self.__dados) 
+            for i in range(0, len(self.__dados)):
+                ok[i] = self.__dados[i].rolar()
+            return ok
+        
         z = quais
         if type(quais) is str:
-            z = list[bool] = [False] * len(self.__dados)
-            for i in quais:
-                z[int(i,10)] = True
+            str_numbers : list[str] = [int(x, 10) - 1 for x in ''.join(quais.split()) if x.isdecimal()] 
+            z : list[bool] = [False] * len(self.__dados)
+            for i in str_numbers:
+                if i >= 5 or i < 0:
+                    continue
+                
+                z[i] = True
 
         for i in range(0, len(self.__dados)):
-            if quais[i]:
+            if z[i]:
                 self.__dados[i].rolar()
         
         return [x.getLado() for x in self.__dados]
-    
-    def rolar(self):
-        ok : list[int]
-        for i in range(0, len(self.__dados)):
-            ok[i] = self.__dados[i].rolar
     
     def toString(self) -> str:
         s : str = ''

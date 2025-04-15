@@ -48,10 +48,12 @@ def main() -> None:
                     pos = 0
                 
                 pl.add(pos, values)
-            except Exception:
+            except ValueError:
+                print("got on exception")
                 pos = 0
             
             if pos == 0:
+                print("GETS ON THIS SHITHOLE")
                 print("Valor inválido. Posição ocupada ou inexistente.")
         
         print("\n\n")

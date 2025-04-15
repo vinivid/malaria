@@ -30,29 +30,30 @@ class Dado:
                 s += (self.s101 + self.s010 + self.s101)
             case 6:
                 s += (self.s111 + self.s000 + self.s111)
+            case _:
+                print("ERRO COM RELACAO AO ATUAL")
         
         s += ("+-----+\n")
         return s
 
     def rolar(self) -> int:
         # é dessa forma q funciona no java
-        self.__atual = self.__r.randint(0, self.__lados - 1)
+        self.__atual = self.__r.randint(1, self.__lados)
         return self.__atual
     
     def getLado(self) -> int:
         return self.__atual
 
-    def __init__(self, n : int):
-        self.__lados = n
-        self.__r = Random()
-        self.rolar()
-    
-    def __init__(self, n : int, seed : int):
-        self.__lados = n
-        self.__r = Random(seed)
-        self.rolar()
-
-    def __init__(self):
-        self.__lados = 6
-        self.__r = Random()
-        self.rolar() 
+    def __init__(self, n : int | None = None, seed : int | None = None):
+        if (n == None and seed == None):
+            self.__lados = 6
+            self.__r = Random()
+            self.rolar()
+        elif (seed == None):
+            self.__lados = n
+            self.__r = Random()
+            self.rolar()
+        else:
+            self.__lados = n
+            self.__r = Random(seed)
+            self.rolar()

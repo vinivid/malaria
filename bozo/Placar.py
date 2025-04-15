@@ -11,7 +11,7 @@ class Placar:
     def __conta(self, n : int, vet : list[int]) -> int:
         return sum([1 for x in vet if x == n])
     
-    def __checkFull(dados : list[int]) -> bool:
+    def __checkFull(self, dados : list[int]) -> bool:
         v : list[int] = deepcopy(dados)
         v.sort()
         check_1 = (v[0] == v[1] and v[1] == v[2] and v[2] == v[3])
@@ -29,7 +29,7 @@ class Placar:
         v : list[int] = dados.copy()
         return (v[0] == v[1] and v[1] == v[2] and v[2] == v[3] and v[3] == v[4])
 
-    def __checkSeqMaior(dados : list[int]) -> bool:
+    def __checkSeqMaior(self, dados : list[int]) -> bool:
         v : list[int] = deepcopy(dados)
         v.sort()
 
@@ -44,7 +44,7 @@ class Placar:
             case 1 | 2 | 3 | 4 | 5 | 6:
                 k = posicao * self.__conta(posicao, dados)
             case 7:
-                if self.__checkFull(dados): 
+                if self.__checkFull(dados) : 
                     k = 15
             case 8:
                 if self.__checkSeqMaior(dados):
