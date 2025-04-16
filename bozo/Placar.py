@@ -66,31 +66,33 @@ class Placar:
         s : str = ''
         for i in range(0, 3):
             if self.__taken[i]:
-                num = f'{self.__placar[i]:<4}'
+                num = f' {self.__placar[i]:<3}'
             else:
                 num = f'({i + 1}) '
-            
-            s += num + '   |   '
 
             if self.__taken[i + 6]:
-                num = f'{self.__placar[i + 6]:<4}'
+                s += num + '   |    '
+                num = f'{self.__placar[i + 6]:<3}'
             else:
+                s += num + '   |   '
                 num = num = f'({i + 7}) '
 
-            s += num + '   |   '
 
             if self.__taken[i + 3]:
-                num = f'{self.__placar[i + 3]:<4}'
+                s += num + '   |   '
+                num = f'{self.__placar[i + 3]:<3}'
             else:
+                s += num + '   |  '
                 num = num = f'({i + 4}) '
             
-            s+= num + '\n--------------------------\n'
+            s+= num + '\n-------|----------|-------\n'
         
         if self.__taken[9]:
-            num = f'{self.__placar[9]:<4}'
+            num = f'{self.__placar[9]:<3}'
+            s += "       |    " + num + "   |"
         else:
             num = "(10)"
+            s += "       |   " + num + "   |"
 
-        s += "       |   " + num + "   |"
         s += "\n       +----------+\n"
         return s
