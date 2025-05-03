@@ -1,107 +1,122 @@
 public class ArvBin {
-    private String[] heap_tree;
-    private int len;
+    private String[] tree;
+    protected int size;
+
+    protected void insEle(int index, String val) {
+        tree[index] = val;
+    }
+
+    protected String getEle(int index) {
+        return tree[index];
+    }
 
     public ArvBin(int len) {
-        heap_tree = new String[len];
-        this.len = 0;
+        tree = new String[len];
+        size = 0;
+    }
+
+    public void insert(String v) {
+        int current = 0;
+
+        while (tree[current] != null) {
+            // Sem elementos repitidos
+            if (v.compareTo(tree[current]) == 0) {
+                return;
+            } else if (v.compareTo(tree[current]) < 0) {
+                current = current * 2 + 1;
+            } else {
+                current = current * 2 + 2;
+            }
+        }
+        tree[current] = v;
+        size += 1;
     }
 
     public boolean find(String v) {
-        for (var val : heap_tree) {
-            if (val != null) {
-                if (val.equals(v))
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private void swap_arr(int id1, int id2) {
-        String tmp = heap_tree[id1];
-        heap_tree[id1] = heap_tree[id2];
-        heap_tree[id2] = tmp;
-    }
-
-    private void heapify_up(int i) {
-        int parent = (i - 1)/2;
-        if (parent >= 0) {
-            if (heap_tree[i].compareTo(heap_tree[parent]) > 0) {
-                swap_arr(i, parent);
-                heapify_up(parent);
-            }
-        }
-    }
-
-    public void insert(String value) {
-        // Sem valores repitidos
-        if (this.find(value)) 
-            return;
+        int current = 0;
         
-        heap_tree[len] = value;
-        heapify_up(len);
-        len += 1;
+        while (tree[current] != null) {
+            if (v.compareTo(tree[current]) == 0) {
+                return true;
+            } else if (v.compareTo(tree[current]) < 0) {
+                current = current * 2 + 1;
+            } else {
+                current = current * 2 + 2;
+            }
+        }
+
+        return false; 
     }
 
-    public int len() {
-        return len;
-    }
+    //Retorna o index do maximo da arvore
+    private int maximum(int root) {
+        int prev = root;
+        int right = 2 * root + 2;
 
-    private void heapify_down(int id) {
-        int smallest = id;
-        int leftChild = 2 * id + 1;
-        int rightChild = 2 * id + 2;
-
-        if (leftChild < len && (heap_tree[leftChild].compareTo(heap_tree[smallest]) < 0)) {
-            smallest = leftChild;
-        }
-        if (rightChild < len && (heap_tree[rightChild].compareTo(heap_tree[smallest]) < 0)) {
-            smallest = rightChild;
+        while (tree[right] != null) {
+            prev = right;
+            right = 2 * right + 2;
         }
 
-        if (smallest != id) {
-            swap_arr(id, smallest);
-            heapify_down(smallest);
-        }
+        return prev;
     }
 
     public boolean remove(String v) {
-        int index_to_remove = -1;
-        for (int i = 0; i < heap_tree.length; ++i) {
-            if (heap_tree[i].equals(v)) {
-                index_to_remove = i;
-                break;
+        int current = 0;
+
+        while (tree[current] != null) {
+            // Sem elementos repitidos
+            if (v.compareTo(tree[current]) == 0) {
+                int left = 2 * current + 1;
+                int right = 2 * current + 2;
+
+                if (tree[left] == null) {
+                    tree[current] = tree[right];
+                    tree[right] = null;
+                } else if (tree[right] == null) {
+                    tree[current] = tree[left];
+                    tree[left] = null;
+                } else {
+                    int max_current = maximum(current);
+                    tree[current] = tree[max_current];
+                    tree[max_current] = null;
+                }
+            } else if (v.compareTo(tree[current]) < 0) {
+                current = current * 2 + 1;
+            } else {
+                current = current * 2 + 2;
             }
         }
 
-        if (index_to_remove == -1) return false;
+        return false;
+    }
 
-        heap_tree[index_to_remove] = heap_tree[len - 1];
-        len -= 1;
+    public int len() {return size;}
 
-        if (index_to_remove < len) {
-            heapify_down(index_to_remove);
-            
-            if (heap_tree[index_to_remove].equals(heap_tree[len])) { 
-                heapify_up(index_to_remove);
-            }
+    private void toStringTraverse(StringBuilder acc, int criatura) {
+        if (tree[criatura] == null)
+            return;
+        
+        int left = 2 * criatura + 1;
+        int right = 2 * criatura + 2;
+
+        if (tree[left] != null) {
+            acc.append("\"" + Integer.toString(criatura) + " " + tree[criatura] + "\" ->" + "\"" + Integer.toString(left) + " " + tree[left] + "\"\n");
         }
 
-        return true;
+        if (tree[right] != null) {
+            acc.append("\"" + Integer.toString(criatura) + " " + tree[criatura] + "\" ->" + "\"" + Integer.toString(right) + " " + tree[right] + "\"\n");
+        }
+
+        toStringTraverse(acc, left);
+        toStringTraverse(acc, right);
     }
 
     @Override
-    public String toString() { 
-        String accu = "digraph {\n";
-
-        for (int i = 0; i < len; ++i) {
-            if (2 * i + 1 < len) 
-                accu += "\"" + Integer.toString(i) + " " + heap_tree[i] + "\"" + " ->" + "\"" + Integer.toString(2*i + 1) + " " + heap_tree[2*i + 1] + "\"" + "\n"; 
-            if (2 * i + 2 < len) 
-                accu += "\"" + Integer.toString(i) + " " + heap_tree[i] + "\"" + " ->" + "\"" + Integer.toString(2*i + 2) + " " + heap_tree[2*i + 2] + "\"" + "\n"; 
-        }
-
-        accu += "}\n";
-        return accu;
-    } 
+    public String toString() {
+        StringBuilder acc = new StringBuilder("digraph {\n");
+        toStringTraverse(acc, 0);
+        acc.append( "}\n");
+        return acc.toString();
+    }
 }
