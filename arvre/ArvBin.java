@@ -2,17 +2,26 @@ public class ArvBin {
     private String[] tree;
     protected int size;
 
-    protected void insEle(int index, String val) {
-        tree[index] = val;
-    }
-
-    protected String getEle(int index) {
-        return tree[index];
+    public ArvBin() {
+        tree = new String[10000];
+        size = 0;
     }
 
     public ArvBin(int len) {
         tree = new String[len];
         size = 0;
+    }
+
+    protected int left_child(int current) {
+        return 2 * current + 1;
+    }
+
+    protected int right_child(int current) {
+        return 2 * current + 1;
+    }
+
+    protected int arrSize() {
+        return tree.length;
     }
 
     public void insert(String v) {
@@ -23,9 +32,9 @@ public class ArvBin {
             if (v.compareTo(tree[current]) == 0) {
                 return;
             } else if (v.compareTo(tree[current]) < 0) {
-                current = current * 2 + 1;
+                current = left_child(current);
             } else {
-                current = current * 2 + 2;
+                current = right_child(current);
             }
         }
         tree[current] = v;
@@ -39,23 +48,22 @@ public class ArvBin {
             if (v.compareTo(tree[current]) == 0) {
                 return true;
             } else if (v.compareTo(tree[current]) < 0) {
-                current = current * 2 + 1;
+                current = left_child(current);
             } else {
-                current = current * 2 + 2;
+                current = right_child(current);
             }
         }
 
         return false; 
     }
 
-    //Retorna o index do maximo da arvore
-    private int maximum(int root) {
+    protected int maximum(int root) {
         int prev = root;
-        int right = 2 * root + 2;
+        int right = right_child(prev);
 
         while (tree[right] != null) {
             prev = right;
-            right = 2 * right + 2;
+            right = right_child(right);
         }
 
         return prev;
@@ -67,8 +75,8 @@ public class ArvBin {
         while (tree[current] != null) {
             // Sem elementos repitidos
             if (v.compareTo(tree[current]) == 0) {
-                int left = 2 * current + 1;
-                int right = 2 * current + 2;
+                int left = left_child(current);
+                int right = right_child(current);
 
                 if (tree[left] == null) {
                     tree[current] = tree[right];
@@ -82,9 +90,9 @@ public class ArvBin {
                     tree[max_current] = null;
                 }
             } else if (v.compareTo(tree[current]) < 0) {
-                current = current * 2 + 1;
+                current = left_child(current);
             } else {
-                current = current * 2 + 2;
+                current = right_child(current);
             }
         }
 
@@ -97,8 +105,8 @@ public class ArvBin {
         if (tree[criatura] == null)
             return;
         
-        int left = 2 * criatura + 1;
-        int right = 2 * criatura + 2;
+        int left = left_child(criatura);
+        int right = right_child(criatura);
 
         if (tree[left] != null) {
             acc.append("\"" + Integer.toString(criatura) + " " + tree[criatura] + "\" ->" + "\"" + Integer.toString(left) + " " + tree[left] + "\"\n");
@@ -118,5 +126,13 @@ public class ArvBin {
         toStringTraverse(acc, 0);
         acc.append( "}\n");
         return acc.toString();
+    }
+
+    protected void insEle(int index, String val) {
+        tree[index] = val;
+    }
+
+    protected String getEle(int index) {
+        return tree[index];
     }
 }
