@@ -1,0 +1,47 @@
+2,8c2,9
+< "0 Carlos" ->"1 Beto" 
+< "0 Carlos" ->"2 Helio" 
+< "2 Helio" ->"5 Eliane" 
+< "2 Helio" ->"6 Omar" 
+< "6 Omar" ->"14 Tadeu" 
+< "14 Tadeu" ->"29 Sara" 
+< "14 Tadeu" ->"30 Walter" 
+---
+> "0 Carlos" ->"1 Beto"
+> "0 Carlos" ->"2 Omar"
+> "2 Omar" ->"5 Helio"
+> "2 Omar" ->"6 Walter"
+> "5 Helio" ->"11 Eliane"
+> "6 Walter" ->"13 Sara"
+> "6 Walter" ->"14 Tadeu"
+> "14 Tadeu" ->"29 Sara"
+10d10
+< 
+12,18c12,18
+< "0 Helio" ->"1 Carlos" 
+< "0 Helio" ->"2 Tadeu" 
+< "1 Carlos" ->"3 Beto" 
+< "1 Carlos" ->"4 Eliane" 
+< "2 Tadeu" ->"5 Omar" 
+< "2 Tadeu" ->"6 Walter" 
+< "5 Omar" ->"12 Sara" 
+---
+> "0 Helio" ->"1 Carlos"
+> "0 Helio" ->"2 Tadeu"
+> "1 Carlos" ->"3 Beto"
+> "1 Carlos" ->"4 Eliane"
+> "2 Tadeu" ->"5 Omar"
+> "2 Tadeu" ->"6 Walter"
+> "5 Omar" ->"12 Sara"
+20,30d19
+< 
+< digraph {
+< "0 Helio" ->"1 Carlos" 
+< "0 Helio" ->"2 Tadeu" 
+< "1 Carlos" ->"3 Beto" 
+< "1 Carlos" ->"4 Eliane" 
+< "2 Tadeu" ->"5 Omar" 
+< "2 Tadeu" ->"6 Walter" 
+< "5 Omar" ->"12 Sara" 
+< }
+< 

@@ -1,0 +1,12 @@
+digraph {
+"0 Sara" ->"1 Carlos"
+"1 Carlos" ->"4 Omar"
+"4 Omar" ->"9 Lea"
+"9 Lea" ->"20 Nadia"
+}
+digraph {
+"0 Omar" ->"1 Lea"
+"0 Omar" ->"2 Sara"
+"1 Lea" ->"3 Carlos"
+"1 Lea" ->"4 Nadia"
+}

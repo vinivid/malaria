@@ -17,11 +17,31 @@ public class ArvBin {
     }
 
     protected int right_child(int current) {
-        return 2 * current + 1;
+        return 2 * current + 2;
     }
 
     protected int arrSize() {
         return tree.length;
+    }
+
+    protected String[] copyArrayTree() {
+        String[] cpy = new String[1000];
+        for (int i = 0; i < 1000; ++i) {cpy[i] = tree[i];}
+        return cpy;
+    }
+
+    protected void cpyTre(int from, int into, String[] cpy) {
+        if (cpy[from] == null) {
+            insEle(into, null);
+            return;
+        }
+
+        insEle(from, null);
+
+        cpyTre(right_child(from), right_child(into), cpy);
+        cpyTre(left_child(from), left_child(into), cpy);
+
+        insEle(into, cpy[from]);
     }
 
     public void insert(String v) {
@@ -69,9 +89,22 @@ public class ArvBin {
         return prev;
     }
 
+    protected int minimum(int root) {
+        int prev = root;
+        int left = left_child(prev);
+
+        while (tree[left] != null) {
+            prev = left;
+            left = right_child(prev);
+        }
+
+        return prev;
+    }
+
     public boolean remove(String v) {
         int current = 0;
 
+        boolean found = false;
         while (tree[current] != null) {
             // Sem elementos repitidos
             if (v.compareTo(tree[current]) == 0) {
@@ -79,16 +112,23 @@ public class ArvBin {
                 int right = right_child(current);
 
                 if (tree[left] == null) {
-                    tree[current] = tree[right];
-                    tree[right] = null;
+                    tree[current] = null;
+                    String[] cpy = copyArrayTree();
+                    cpyTre(right, current, cpy);
                 } else if (tree[right] == null) {
-                    tree[current] = tree[left];
-                    tree[left] = null;
+                    tree[current] = null;
+                    String[] cpy = copyArrayTree();
+                    cpyTre(left, current, cpy);
                 } else {
-                    int max_current = maximum(current);
-                    tree[current] = tree[max_current];
-                    tree[max_current] = null;
+                    int min = minimum(right_child(current));
+
+                    insEle(current, null); 
+                    tree[current] =  tree[min];
+                    tree[min] = null; 
                 }
+
+                found = true;
+                break;
             } else if (v.compareTo(tree[current]) < 0) {
                 current = left_child(current);
             } else {
@@ -96,7 +136,7 @@ public class ArvBin {
             }
         }
 
-        return false;
+        return found;
     }
 
     public int len() {return size;}

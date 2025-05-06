@@ -1,0 +1,21 @@
+2,3c2,3
+< "0 Lea" ->"1 Guta" 
+< "0 Lea" ->"2 Ze" 
+---
+> "0 Lea" ->"1 Guta"
+> "0 Lea" ->"2 Ze"
+5d4
+< 
+7,8c6,7
+< "0 Lea" ->"1 Guta" 
+< "0 Lea" ->"2 Ze" 
+---
+> "0 Lea" ->"1 Guta"
+> "0 Lea" ->"2 Ze"
+10,15d8
+< 
+< digraph {
+< "0 Lea" ->"1 Guta" 
+< "0 Lea" ->"2 Ze" 
+< }
+< 

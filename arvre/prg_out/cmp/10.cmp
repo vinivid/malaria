@@ -1,0 +1,31 @@
+2,5c2,5
+< "0 Fred" ->"2 Sara" 
+< "2 Sara" ->"5 Renata" 
+< "2 Sara" ->"6 Tadeu" 
+< "6 Tadeu" ->"14 Xena" 
+---
+> "0 Sara" ->"1 Fred"
+> "0 Sara" ->"2 Tadeu"
+> "1 Fred" ->"4 Renata"
+> "2 Tadeu" ->"6 Xena"
+7d6
+< 
+9,12c8,11
+< "0 Sara" ->"1 Fred" 
+< "0 Sara" ->"2 Tadeu" 
+< "1 Fred" ->"4 Renata" 
+< "2 Tadeu" ->"6 Xena" 
+---
+> "0 Sara" ->"1 Fred"
+> "0 Sara" ->"2 Tadeu"
+> "1 Fred" ->"4 Renata"
+> "2 Tadeu" ->"6 Xena"
+14,21d12
+< 
+< digraph {
+< "0 Sara" ->"1 Fred" 
+< "0 Sara" ->"2 Tadeu" 
+< "1 Fred" ->"4 Renata" 
+< "2 Tadeu" ->"6 Xena" 
+< }
+< 

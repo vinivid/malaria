@@ -1,4 +1,7 @@
 public class ArvAvl extends ArvBin {
+    public ArvAvl(int len) {
+        super(len);
+    }
 
     private int height(int index) {
         if (getEle(index) == null)
@@ -10,26 +13,16 @@ public class ArvAvl extends ArvBin {
         return Math.max(a, b) + 1;
     }
 
-    private void copyTree(int from, int into) {
-        if (getEle(from) == null) {
-            return;
-        }
-
-        insEle(into, getEle(from));
-
-        copyTree(right_child(from), right_child(into));
-        copyTree(left_child(from), left_child(into));
-    }
-
     private void rotateLeft(int index) {
         int aLeft = left_child(index);
         int aRight = right_child(index);
         String A = getEle(index);
         String B = getEle(aRight);
 
-        copyTree(aLeft, left_child(aLeft));
-        copyTree(left_child(aRight), right_child(aLeft));
-        copyTree(right_child(aRight), aRight);
+        String[] g = copyArrayTree();
+        cpyTre(aLeft, left_child(aLeft), g);
+        cpyTre(left_child(aRight), right_child(aLeft), g);
+        cpyTre(right_child(aRight), aRight, g);
 
         insEle(index, B);
         insEle(aLeft, A);
@@ -41,21 +34,19 @@ public class ArvAvl extends ArvBin {
         String A = getEle(index);
         String B = getEle(aLeft);
 
-        copyTree(aRight, right_child(aRight));
-        copyTree(right_child(aLeft), left_child(aRight));
-        copyTree(left_child(aLeft), aLeft);
+        String[] g = copyArrayTree();
+        cpyTre(aRight, right_child(aRight), g);
+        cpyTre(right_child(aLeft), left_child(aRight), g);
+        cpyTre(left_child(aLeft), aLeft, g);
 
         insEle(index, B);
         insEle(aRight, A);
     }
 
     private void fixTree(int index) {
-        if (index < 0)
-            return;
-        
         int dLeft = height(left_child(index));
         int dRight = height(right_child(index));
-        int bf = dLeft - dRight;
+        int bf = dRight - dLeft;
 
         if (bf == 2) {
             if (height(right_child(right_child(index))) >= height(right_child(left_child(index)))) {
@@ -72,6 +63,10 @@ public class ArvAvl extends ArvBin {
                 rotateRight(index);
             }
         }
+
+        //caso base
+        if (index <= 0)
+            return;
 
         fixTree((index - 1)/2);
     }
@@ -97,5 +92,47 @@ public class ArvAvl extends ArvBin {
         fixTree(current);
 
         return;
+    }
+
+    @Override
+    public boolean remove(String v) {
+        int current = 0;
+
+        boolean found = false;
+        while (getEle(current) != null) {
+            // Sem elementos repitidos
+            if (v.compareTo(getEle(current)) == 0) {
+                int left = left_child(current);
+                int right = right_child(current);
+                
+                if (getEle(left) == null && getEle(right) == null) {
+                    insEle(current, null);
+                } else if (getEle(left) == null) {
+                    insEle(current, null);
+                    String[] cpy = copyArrayTree();
+                    cpyTre(right, current, cpy);
+                } else if (getEle(right) == null) {
+                    insEle(current, null);
+                    String[] cpy = copyArrayTree();
+                    cpyTre(right, current, cpy);
+                } else {
+                    int min = minimum(right_child(current));
+                    
+                    insEle(current, null); 
+                    insEle(current, getEle(min));
+                    insEle(min, null); 
+                }
+                found = true;
+                break;
+            } else if (v.compareTo(getEle(current)) < 0) {
+                current = left_child(current);
+            } else {
+                current = right_child(current);
+            }
+        }
+
+        fixTree(current);
+
+        return found;
     }
 }

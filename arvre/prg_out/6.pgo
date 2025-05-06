@@ -1,0 +1,12 @@
+digraph {
+"0 Yara" ->"1 Xena"
+"0 Yara" ->"2 Ze"
+"1 Xena" ->"3 Carlos"
+"3 Carlos" ->"8 Nadia"
+}
+digraph {
+"0 Yara" ->"1 Nadia"
+"0 Yara" ->"2 Ze"
+"1 Nadia" ->"3 Carlos"
+"1 Nadia" ->"4 Xena"
+}
