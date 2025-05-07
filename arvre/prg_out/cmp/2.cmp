@@ -1,14 +1,4 @@
 2c2
-< "0 Xena" ->"1 Eliane" 
+< "0 Xena" ->"1 Eliane"
 ---
-> "0 Xena" ->"1 Eliane"
-6c6
-< "0 Xena" ->"1 Eliane" 
----
-> "0 Xena" ->"1 Eliane"
-8,12d7
-< 
-< digraph {
-< "0 Xena" ->"1 Eliane" 
-< }
-< 
+> "0 Xena" ->"1 Eliane" 

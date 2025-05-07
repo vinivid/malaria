@@ -26,7 +26,7 @@ public class Main {
 
         System.out.println(bin);
         System.out.println(bal);
-        System.out.print(avl);
+        System.out.println(avl);
 
         dog.close();
     }

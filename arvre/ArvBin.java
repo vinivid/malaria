@@ -123,15 +123,19 @@ public class ArvBin {
                 int max = maximum(left_child(current));
 
                 if(getEle(left) == null){
-                    insEle(current, getEle(min));
-                    insEle(min, null);
+                    insEle(current, null);
+                    String[] g = copyArrayTree();
+                    cpyTre(min, current, g);
+                    cpyTre(left, left, g);
                     found = true;
                     size -= 1;
                     break;
                 }
 
-                insEle(current, getEle(max));
-                insEle(max, null);
+                insEle(current, null);
+                String[] g = copyArrayTree();
+                cpyTre(max, current, g);
+                cpyTre(right, right, g);
                 found = true;
                 size -= 1;
                 break;
@@ -150,7 +154,7 @@ public class ArvBin {
     @Override
     public String toString() {
         if (size == 0) {
-            String ok = new String("digraph {\n}");
+            String ok = new String("digraph {\n}\n");
             return ok;
         } else if (size == 1) {
             String ok = new String("digraph {\n");
@@ -162,12 +166,12 @@ public class ArvBin {
                 if (getEle(i) != null) {
                     if (getEle(left_child(i)) != null) {
                         int left = left_child(i);
-                        ok += "\"" + Integer.toString(i) + " " + tree[i] + "\" ->" + "\"" + Integer.toString(left) + " " + tree[left] + "\"\n"; 
+                        ok += "\"" + Integer.toString(i) + " " + tree[i] + "\" ->" + "\"" + Integer.toString(left) + " " + tree[left] + "\" \n"; 
                     }
     
                     if (getEle(right_child(i)) != null) {
                         int right = right_child(i);
-                        ok += "\"" + Integer.toString(i) + " " + tree[i] + "\" ->" + "\"" + Integer.toString(right) + " " + tree[right] + "\"\n"; 
+                        ok += "\"" + Integer.toString(i) + " " + tree[i] + "\" ->" + "\"" + Integer.toString(right) + " " + tree[right] + "\" \n"; 
                     } 
                 }
             }

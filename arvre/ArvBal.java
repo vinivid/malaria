@@ -9,9 +9,45 @@ public class ArvBal extends ArvBin {
         balance();
     }
 
+    private boolean balRemove(String v) {
+        int current = 0;
+
+        boolean found = false;
+        while (getEle(current) != null) {
+            // Sem elementos repitidos
+            if (v.compareTo(getEle(current)) == 0) {
+                int left = left_child(current);
+                int right = right_child(current);
+                
+                int min = minimum(right_child(current));
+                int max = maximum(left_child(current));
+
+                if(getEle(left) == null){
+                    insEle(current, getEle(min));
+                    insEle(min, null);
+                    found = true;
+                    removeSize();
+                    break;
+                }
+
+                insEle(current, getEle(max));
+                insEle(max, null);
+                found = true;
+                removeSize();
+                break;
+            } else if (v.compareTo(getEle(current)) < 0) {
+                current = left_child(current);
+            } else {
+                current = right_child(current);
+            }
+        }
+
+        return found;
+    }
+
     @Override
     public boolean remove(String v) {
-        boolean removeu = super.remove(v);
+        boolean removeu = balRemove(v);
         if (removeu) balance();
         return removeu;
     }
