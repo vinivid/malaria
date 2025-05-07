@@ -8,9 +8,7 @@
 > "0 Yara" ->"2 Ze"
 > "1 Xena" ->"3 Carlos"
 > "3 Carlos" ->"8 Nadia"
-7d6
-< 
-9,12c8,11
+9,12c9,12
 < "0 Xena" ->"1 Carlos" 
 < "0 Xena" ->"2 Yara" 
 < "1 Carlos" ->"4 Nadia" 
@@ -20,7 +18,7 @@
 > "0 Yara" ->"2 Ze"
 > "1 Nadia" ->"3 Carlos"
 > "1 Nadia" ->"4 Xena"
-14,21d12
+14,21d13
 < 
 < digraph {
 < "0 Yara" ->"1 Nadia" 

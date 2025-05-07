@@ -7,12 +7,13 @@ digraph {
 "17 Carlos" ->"36 Daniela"
 "36 Daniela" ->"74 Fred"
 }
+
 digraph {
-"0 Kelle" ->"1 Carlos"
-"0 Kelle" ->"2 Xena"
-"1 Carlos" ->"3 Beto"
-"1 Carlos" ->"4 Fred"
-"4 Fred" ->"9 Daniela"
-"4 Fred" ->"10 Guta"
-"2 Xena" ->"6 Ze"
+"0 Kelle" ->"1 Daniela"
+"0 Kelle" ->"2 Ze"
+"1 Daniela" ->"3 Carlos"
+"1 Daniela" ->"4 Guta"
+"2 Ze" ->"5 Xena"
+"3 Carlos" ->"7 Beto"
+"4 Guta" ->"9 Fred"
 }

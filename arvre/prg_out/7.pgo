@@ -4,6 +4,7 @@ digraph {
 "4 Omar" ->"9 Lea"
 "9 Lea" ->"20 Nadia"
 }
+
 digraph {
 "0 Omar" ->"1 Lea"
 "0 Omar" ->"2 Sara"

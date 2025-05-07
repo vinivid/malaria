@@ -5,6 +5,7 @@ digraph {
 "4 Nadia" ->"10 Renata"
 "10 Renata" ->"21 Queila"
 }
+
 digraph {
 "0 Renata" ->"1 Nadia"
 "0 Renata" ->"2 Yara"

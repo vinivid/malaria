@@ -1,13 +1,13 @@
 digraph {
 "0 Carlos" ->"1 Beto"
-"0 Carlos" ->"2 Omar"
-"2 Omar" ->"5 Helio"
-"2 Omar" ->"6 Walter"
-"5 Helio" ->"11 Eliane"
-"6 Walter" ->"13 Sara"
-"6 Walter" ->"14 Tadeu"
+"0 Carlos" ->"2 Helio"
+"2 Helio" ->"6 Omar"
+"6 Omar" ->"14 Tadeu"
 "14 Tadeu" ->"29 Sara"
+"14 Tadeu" ->"30 Walter"
+"29 Sara" ->"59 Sara"
 }
+
 digraph {
 "0 Helio" ->"1 Carlos"
 "0 Helio" ->"2 Tadeu"

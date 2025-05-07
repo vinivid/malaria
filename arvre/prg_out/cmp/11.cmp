@@ -14,9 +14,7 @@
 > "8 Guta" ->"17 Carlos"
 > "17 Carlos" ->"36 Daniela"
 > "36 Daniela" ->"74 Fred"
-10d9
-< 
-12,18c11,17
+12,18c12,18
 < "0 Fred" ->"1 Carlos" 
 < "0 Fred" ->"2 Kelle" 
 < "1 Carlos" ->"3 Beto" 
@@ -25,14 +23,14 @@
 < "2 Kelle" ->"6 Xena" 
 < "6 Xena" ->"14 Ze" 
 ---
-> "0 Kelle" ->"1 Carlos"
-> "0 Kelle" ->"2 Xena"
-> "1 Carlos" ->"3 Beto"
-> "1 Carlos" ->"4 Fred"
-> "4 Fred" ->"9 Daniela"
-> "4 Fred" ->"10 Guta"
-> "2 Xena" ->"6 Ze"
-20,30d18
+> "0 Kelle" ->"1 Daniela"
+> "0 Kelle" ->"2 Ze"
+> "1 Daniela" ->"3 Carlos"
+> "1 Daniela" ->"4 Guta"
+> "2 Ze" ->"5 Xena"
+> "3 Carlos" ->"7 Beto"
+> "4 Guta" ->"9 Fred"
+20,30d19
 < 
 < digraph {
 < "0 Kelle" ->"1 Daniela" 

@@ -1,6 +1,6 @@
 public class ArvBin {
     private String[] tree;
-    protected int size;
+    private int size;
 
     public ArvBin() {
         tree = new String[10000];
@@ -10,6 +10,14 @@ public class ArvBin {
     public ArvBin(int len) {
         tree = new String[len];
         size = 0;
+    }
+
+    protected void addSize() {
+        size += 1;
+    }
+
+    protected void removeSize() {
+        size -= 1;
     }
 
     protected int left_child(int current) {
@@ -110,24 +118,22 @@ public class ArvBin {
             if (v.compareTo(tree[current]) == 0) {
                 int left = left_child(current);
                 int right = right_child(current);
+                
+                int min = minimum(right_child(current));
+                int max = maximum(left_child(current));
 
-                if (tree[left] == null) {
-                    tree[current] = null;
-                    String[] cpy = copyArrayTree();
-                    cpyTre(right, current, cpy);
-                } else if (tree[right] == null) {
-                    tree[current] = null;
-                    String[] cpy = copyArrayTree();
-                    cpyTre(left, current, cpy);
-                } else {
-                    int min = minimum(right_child(current));
-
-                    insEle(current, null); 
-                    tree[current] =  tree[min];
-                    tree[min] = null; 
+                if(getEle(left) == null){
+                    insEle(current, getEle(min));
+                    insEle(min, null);
+                    found = true;
+                    size -= 1;
+                    break;
                 }
 
+                insEle(current, getEle(max));
+                insEle(max, null);
                 found = true;
+                size -= 1;
                 break;
             } else if (v.compareTo(tree[current]) < 0) {
                 current = left_child(current);
@@ -141,31 +147,33 @@ public class ArvBin {
 
     public int len() {return size;}
 
-    private void toStringTraverse(StringBuilder acc, int criatura) {
-        if (tree[criatura] == null)
-            return;
-        
-        int left = left_child(criatura);
-        int right = right_child(criatura);
-
-        if (tree[left] != null) {
-            acc.append("\"" + Integer.toString(criatura) + " " + tree[criatura] + "\" ->" + "\"" + Integer.toString(left) + " " + tree[left] + "\"\n");
-        }
-
-        if (tree[right] != null) {
-            acc.append("\"" + Integer.toString(criatura) + " " + tree[criatura] + "\" ->" + "\"" + Integer.toString(right) + " " + tree[right] + "\"\n");
-        }
-
-        toStringTraverse(acc, left);
-        toStringTraverse(acc, right);
-    }
-
     @Override
     public String toString() {
-        StringBuilder acc = new StringBuilder("digraph {\n");
-        toStringTraverse(acc, 0);
-        acc.append( "}\n");
-        return acc.toString();
+        if (size == 0) {
+            String ok = new String("digraph {\n}");
+            return ok;
+        } else if (size == 1) {
+            String ok = new String("digraph {\n");
+            ok += "\"0" + " " + tree[0] +  "\" }\n"; 
+            return ok;
+        } else {
+            String ok = new String("digraph {\n");
+            for (int i = 0; i < 1000; ++i) {
+                if (getEle(i) != null) {
+                    if (getEle(left_child(i)) != null) {
+                        int left = left_child(i);
+                        ok += "\"" + Integer.toString(i) + " " + tree[i] + "\" ->" + "\"" + Integer.toString(left) + " " + tree[left] + "\"\n"; 
+                    }
+    
+                    if (getEle(right_child(i)) != null) {
+                        int right = right_child(i);
+                        ok += "\"" + Integer.toString(i) + " " + tree[i] + "\" ->" + "\"" + Integer.toString(right) + " " + tree[right] + "\"\n"; 
+                    } 
+                }
+            }
+            ok += "}\n";
+            return ok;
+        }
     }
 
     protected void insEle(int index, String val) {

@@ -4,15 +4,13 @@
 ---
 > "0 Lea" ->"1 Guta"
 > "0 Lea" ->"2 Ze"
-5d4
-< 
-7,8c6,7
+7,8c7,8
 < "0 Lea" ->"1 Guta" 
 < "0 Lea" ->"2 Ze" 
 ---
 > "0 Lea" ->"1 Guta"
 > "0 Lea" ->"2 Ze"
-10,15d8
+10,15d9
 < 
 < digraph {
 < "0 Lea" ->"1 Guta" 

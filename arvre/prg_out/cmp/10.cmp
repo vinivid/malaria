@@ -4,13 +4,11 @@
 < "2 Sara" ->"6 Tadeu" 
 < "6 Tadeu" ->"14 Xena" 
 ---
-> "0 Sara" ->"1 Fred"
-> "0 Sara" ->"2 Tadeu"
-> "1 Fred" ->"4 Renata"
-> "2 Tadeu" ->"6 Xena"
-7d6
-< 
-9,12c8,11
+> "0 Fred" ->"2 Tadeu"
+> "2 Tadeu" ->"5 Renata"
+> "2 Tadeu" ->"6 Sara"
+> "6 Sara" ->"14 Xena"
+9,12c9,12
 < "0 Sara" ->"1 Fred" 
 < "0 Sara" ->"2 Tadeu" 
 < "1 Fred" ->"4 Renata" 
@@ -20,7 +18,7 @@
 > "0 Sara" ->"2 Tadeu"
 > "1 Fred" ->"4 Renata"
 > "2 Tadeu" ->"6 Xena"
-14,21d12
+14,21d13
 < 
 < digraph {
 < "0 Sara" ->"1 Fred" 

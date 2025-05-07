@@ -10,9 +10,7 @@
 > "1 Eliane" ->"4 Nadia"
 > "4 Nadia" ->"10 Renata"
 > "10 Renata" ->"21 Queila"
-8d7
-< 
-10,14c9,13
+10,14c10,14
 < "0 Queila" ->"1 Eliane" 
 < "0 Queila" ->"2 Yara" 
 < "1 Eliane" ->"4 Nadia" 
@@ -24,7 +22,7 @@
 > "1 Nadia" ->"3 Eliane"
 > "1 Nadia" ->"4 Queila"
 > "2 Yara" ->"6 Ze"
-16,24d14
+16,24d15
 < 
 < digraph {
 < "0 Renata" ->"1 Nadia" 

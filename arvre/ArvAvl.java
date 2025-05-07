@@ -88,6 +88,7 @@ public class ArvAvl extends ArvBin {
         }
 
         insEle(current, v);
+        addSize();
 
         fixTree(current);
 
@@ -105,24 +106,21 @@ public class ArvAvl extends ArvBin {
                 int left = left_child(current);
                 int right = right_child(current);
                 
-                if (getEle(left) == null && getEle(right) == null) {
-                    insEle(current, null);
-                } else if (getEle(left) == null) {
-                    insEle(current, null);
-                    String[] cpy = copyArrayTree();
-                    cpyTre(right, current, cpy);
-                } else if (getEle(right) == null) {
-                    insEle(current, null);
-                    String[] cpy = copyArrayTree();
-                    cpyTre(right, current, cpy);
-                } else {
-                    int min = minimum(right_child(current));
-                    
-                    insEle(current, null); 
+                int min = minimum(right_child(current));
+                int max = maximum(left_child(current));
+
+                if(getEle(left) == null){
                     insEle(current, getEle(min));
-                    insEle(min, null); 
+                    insEle(min, null);
+                    removeSize();
+                    found = true;
+                    break;
                 }
+
+                insEle(current, getEle(max));
+                insEle(max, null);
                 found = true;
+                removeSize();
                 break;
             } else if (v.compareTo(getEle(current)) < 0) {
                 current = left_child(current);
