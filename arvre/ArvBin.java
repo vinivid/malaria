@@ -1,3 +1,7 @@
+/* Renan Banci Catarin 14658181
+ * Vinicius Souza Freitas 15491959
+ */
+
 public class ArvBin {
     private String[] tree;
     private int size;

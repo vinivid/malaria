@@ -1,3 +1,7 @@
+/* Renan Banci Catarin 14658181
+ * Vinicius Souza Freitas 15491959
+ */
+
 import java.util.Scanner;
 
 public class Main {
