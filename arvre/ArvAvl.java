@@ -77,64 +77,25 @@ public class ArvAvl extends ArvBin {
 
     @Override
     public void insert(String v) {
-        int current = 0;
+        int insertedIndex = insertWithIndex(v);
 
-        while (getEle(current) != null) {
-            String cElem = getEle(current);
+        if (insertedIndex == -1)
+            return;
 
-            if (cElem.equals(v)) {
-                return;
-            } else if (v.compareTo(cElem) < 0){
-                current = left_child(current);
-            } else {
-                current = right_child(current);
-            }
-        }
-
-        insEle(current, v);
-        addSize();
-
-        fixTree(current);
+        fixTree(insertedIndex);
 
         return;
     }
 
     @Override
     public boolean remove(String v) {
-        int current = 0;
+        int removedIndex = removeWithIndex(v);
 
-        boolean found = false;
-        while (getEle(current) != null) {
-            // Sem elementos repitidos
-            if (v.compareTo(getEle(current)) == 0) {
-                int left = left_child(current);
-                int right = right_child(current);
-                
-                int min = minimum(right_child(current));
-                int max = maximum(left_child(current));
+        if (removedIndex == -1) 
+            return false;
 
-                if(getEle(left) == null){
-                    insEle(current, getEle(min));
-                    insEle(min, null);
-                    removeSize();
-                    found = true;
-                    break;
-                }
+        fixTree(removedIndex);
 
-                insEle(current, getEle(max));
-                insEle(max, null);
-                found = true;
-                removeSize();
-                break;
-            } else if (v.compareTo(getEle(current)) < 0) {
-                current = left_child(current);
-            } else {
-                current = right_child(current);
-            }
-        }
-
-        fixTree(current);
-
-        return found;
+        return true;
     }
 }

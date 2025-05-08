@@ -16,10 +16,6 @@ public class ArvBin {
         size = 0;
     }
 
-    protected void addSize() {
-        size += 1;
-    }
-
     protected void removeSize() {
         size -= 1;
     }
@@ -56,13 +52,13 @@ public class ArvBin {
         insEle(into, cpy[from]);
     }
 
-    public void insert(String v) {
+    protected int insertWithIndex(String v) {
         int current = 0;
 
         while (tree[current] != null) {
             // Sem elementos repitidos
             if (v.compareTo(tree[current]) == 0) {
-                return;
+                return -1;
             } else if (v.compareTo(tree[current]) < 0) {
                 current = left_child(current);
             } else {
@@ -71,6 +67,11 @@ public class ArvBin {
         }
         tree[current] = v;
         size += 1;
+        return current;
+    }
+
+    public void insert(String v) {
+        insertWithIndex(v);
     }
 
     public boolean find(String v) {
@@ -113,7 +114,7 @@ public class ArvBin {
         return prev;
     }
 
-    public boolean remove(String v) {
+    protected int removeWithIndex(String v) {
         int current = 0;
 
         boolean found = false;
@@ -123,23 +124,35 @@ public class ArvBin {
                 int left = left_child(current);
                 int right = right_child(current);
                 
-                int min = minimum(right_child(current));
-                int max = maximum(left_child(current));
+                int min = minimum(right);
+                int max = maximum(left);
 
                 if(getEle(left) == null){
-                    insEle(current, null);
                     String[] g = copyArrayTree();
+                    String minEle = getEle(min);
                     cpyTre(min, current, g);
-                    cpyTre(left, left, g);
+                    if (minEle != null && minEle != g[right]) {
+                        insEle(right, g[right]);
+                    }
+
                     found = true;
                     size -= 1;
                     break;
                 }
 
-                insEle(current, null);
                 String[] g = copyArrayTree();
+                String maxEle = getEle(max);
+                String rightEle = getEle(right);
                 cpyTre(max, current, g);
-                cpyTre(right, right, g);
+
+                if (maxEle != null && maxEle != g[left]) {
+                    insEle(left, g[left]);
+                }
+
+                if (rightEle != null) {
+                    insEle(right, g[right]);
+                }
+
                 found = true;
                 size -= 1;
                 break;
@@ -150,7 +163,19 @@ public class ArvBin {
             }
         }
 
-        return found;
+        if (found)
+            return current;
+        else 
+            return -1;
+    }
+
+    public boolean remove(String v) {
+        int removedIndex = removeWithIndex(v);
+
+        if (removedIndex == -1)
+            return false;
+
+        return true;
     }
 
     public int len() {return size;}
