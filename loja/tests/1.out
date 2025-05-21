@@ -1,0 +1,166 @@
+
+Operação inserir livro: 8535283528
+Operação realizada com sucesso
+
+Operação inserir livro: 8535226346
+Operação realizada com sucesso
+
+Operação inserir livro: 8522104999
+Operação realizada com sucesso
+
+Operação inserir CD: 8579715172
+Operação realizada com sucesso
+
+Operação inserir CD: 93624684725
+Operação realizada com sucesso
+
+Operação inserir DVD: 7899307921551
+Operação realizada com sucesso
+
+Operação de compra: 8535226346
+Operação realizada com sucesso: 8535226346
+
+Operação de compra: 8535283528
+Operação realizada com sucesso: 8535283528
+
+Operação de compra: 8535226346
+Operação realizada com sucesso: 8535226346
+
+Procurando: 8522104999
+Encontrado:
+Livro
+Código: 8522104999
+Título: Introdução á teoria da computação
+Autor: Michael Sipser
+Editora: Cengage Learning
+Edição: 1
+Ano: 2005
+Páginas: 612
+Idioma: PT-BR
+
+Operação de compra: 8522104999
+Operação realizada com sucesso: 8522104999
+
+Operação de compra: 8579715172
+Operação realizada com sucesso: 8579715172
+
+Procurando: 093624684725
+Encontrado:
+CD
+Código: 93624684725
+Título: Ray Of Light
+Banda: Madona
+Gravadora: Rimo
+Ano: 2010
+trilhas: 6
+
+Operação de compra: 93624684725
+Operação realizada com sucesso: 93624684725
+
+Operação de compra: 7899307921551
+Operação realizada com sucesso: 7899307921551
+
+Operação de venda: 8579715172
+***Erro: Estoque insuficiente: 8579715172 Quantidade: 1
+
+Operação de compra: 8535226346
+Operação realizada com sucesso: 8535226346
+
+Operação de compra: 1234567890
+***Erro: Código inexistente: 1234567890
+
+Operação de venda: 1234567789
+***Erro: Código inexistente: 1234567789
+
+Operação de venda: 8535226346
+Operação realizada com sucesso: 8535226346
+
+Procurando: 1234567890
+Produto não encontrado: 1234567890
+
+Procurando: Introdução ao teste de software
+Encontrado:
+Livro
+Código: 8535283528
+Título: Introdução ao teste de software
+Autor: Marcio Delamaro
+Editora: GEN LTC
+Edição: 2
+Ano: 2017
+Páginas: 448
+Idioma: PT-BR
+
+Operação de venda: 93624684725
+Operação realizada com sucesso: 93624684725
+
+Operação de sumarização: 
+Livro
+Código: 8535283528
+Título: Introdução ao teste de software
+Autor: Marcio Delamaro
+Editora: GEN LTC
+Edição: 2
+Ano: 2017
+Páginas: 448
+Idioma: PT-BR
+Quantidade: 66
+
+Livro
+Código: 8535226346
+Título: Introdução ao teste de software
+Autor: Marcio Delamaro
+Editora: ELSEVIER
+Edição: 1
+Ano: 2005
+Páginas: 394
+Idioma: PT-BR
+Quantidade: 43
+
+Livro
+Código: 8522104999
+Título: Introdução á teoria da computação
+Autor: Michael Sipser
+Editora: Cengage Learning
+Edição: 1
+Ano: 2005
+Páginas: 612
+Idioma: PT-BR
+Quantidade: 22
+
+Quantidade de Livros: 131
+
+CD
+Código: 8579715172
+Título: COLECAO MILTON NASCIMENTO
+Banda: Milton Nascimento
+Gravadora: Abril
+Ano: 2022
+trilhas: 10
+Quantidade: 0
+
+CD
+Código: 93624684725
+Título: Ray Of Light
+Banda: Madona
+Gravadora: Rimo
+Ano: 2010
+trilhas: 6
+Quantidade: 0
+
+Quantidade de CDs: 0
+
+DVD
+Código: 7899307921551
+Título: Tinker Bell E O Monstro Da Terra Do Nunca
+Diretor: John Doe
+Gênero: Animação
+Ano: 2003
+Nacionalidade: Estadunidense
+Idioma: PT-BR
+Quantidade: 15
+
+Quantidade de DVDs: 15
+
+
+Operação inserir DVD: 7899307921551
+***Erro: Código já cadastrado: 7899307921551

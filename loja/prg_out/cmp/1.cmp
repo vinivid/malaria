@@ -1,0 +1,231 @@
+0a1,2
+> Operação inserir livro: 8535283528
+> Operação realizada com sucesso
+2,3c4,5
+< OperaÃ§Ã£o inserir livro: 8535283528
+< OperaÃ§Ã£o realizada com sucesso
+---
+> Operação inserir livro: 8535226346
+> Operação realizada com sucesso
+5,6c7,8
+< OperaÃ§Ã£o inserir livro: 8535226346
+< OperaÃ§Ã£o realizada com sucesso
+---
+> Operação inserir livro: 8522104999
+> Operação realizada com sucesso
+8,9c10,11
+< OperaÃ§Ã£o inserir livro: 8522104999
+< OperaÃ§Ã£o realizada com sucesso
+---
+> Operação inserir CD: 8579715172
+> Operação realizada com sucesso
+11,12c13,14
+< OperaÃ§Ã£o inserir CD: 8579715172
+< OperaÃ§Ã£o realizada com sucesso
+---
+> Operação inserir CD: 093624684725
+> Operação realizada com sucesso
+14,15c16,17
+< OperaÃ§Ã£o inserir CD: 93624684725
+< OperaÃ§Ã£o realizada com sucesso
+---
+> Operação inserir DVD: 7899307921551
+> Operação realizada com sucesso
+17,18c19,20
+< OperaÃ§Ã£o inserir DVD: 7899307921551
+< OperaÃ§Ã£o realizada com sucesso
+---
+> Operação de compra: 8535226346
+> Operação realizada com sucesso: 8535226346
+20,21c22,23
+< OperaÃ§Ã£o de compra: 8535226346
+< OperaÃ§Ã£o realizada com sucesso: 8535226346
+---
+> Operação de compra: 8535283528
+> Operação realizada com sucesso: 8535283528
+23,27c25,26
+< OperaÃ§Ã£o de compra: 8535283528
+< OperaÃ§Ã£o realizada com sucesso: 8535283528
+< 
+< OperaÃ§Ã£o de compra: 8535226346
+< OperaÃ§Ã£o realizada com sucesso: 8535226346
+---
+> Operação de compra: 8535226346
+> Operação realizada com sucesso: 8535226346
+32,33c31,32
+< CÃ³digo: 8522104999
+< TÃ­tulo: IntroduÃ§Ã£o Ã¡ teoria da computaÃ§Ã£o
+---
+> Código: 8522104999
+> Título: Introdução á teoria da computação
+36c35
+< EdiÃ§Ã£o: 1
+---
+> Edição: 1
+38c37
+< PÃ¡ginas: 612
+---
+> Páginas: 612
+41,42c40,41
+< OperaÃ§Ã£o de compra: 8522104999
+< OperaÃ§Ã£o realizada com sucesso: 8522104999
+---
+> Operação de compra: 8522104999
+> Operação realizada com sucesso: 8522104999
+44,45c43,44
+< OperaÃ§Ã£o de compra: 8579715172
+< OperaÃ§Ã£o realizada com sucesso: 8579715172
+---
+> Operação de compra: 8579715172
+> Operação realizada com sucesso: 8579715172
+50,51c49,50
+< CÃ³digo: 93624684725
+< TÃ­tulo: Ray Of Light
+---
+> Código: 93624684725
+> Título: Ray Of Light
+57,58c56,57
+< OperaÃ§Ã£o de compra: 93624684725
+< OperaÃ§Ã£o realizada com sucesso: 93624684725
+---
+> Operação de compra: 93624684725
+> Operação realizada com sucesso: 93624684725
+60,61c59,60
+< OperaÃ§Ã£o de compra: 7899307921551
+< OperaÃ§Ã£o realizada com sucesso: 7899307921551
+---
+> Operação de compra: 7899307921551
+> Operação realizada com sucesso: 7899307921551
+63c62
+< OperaÃ§Ã£o de venda: 8579715172
+---
+> Operação de venda: 8579715172
+66,67c65,66
+< OperaÃ§Ã£o de compra: 8535226346
+< OperaÃ§Ã£o realizada com sucesso: 8535226346
+---
+> Operação de compra: 8535226346
+> Operação realizada com sucesso: 8535226346
+69,70c68,69
+< OperaÃ§Ã£o de compra: 1234567890
+< ***Erro: CÃ³digo inexistente: 1234567890
+---
+> Operação de compra: 1234567890
+> ***Erro: Código inexistente: 1234567890
+72,73c71,72
+< OperaÃ§Ã£o de venda: 1234567789
+< ***Erro: CÃ³digo inexistente: 1234567789
+---
+> Operação de venda: 1234567789
+> ***Erro: Código inexistente: 1234567789
+75,76c74,75
+< OperaÃ§Ã£o de venda: 8535226346
+< OperaÃ§Ã£o realizada com sucesso: 8535226346
+---
+> Operação de venda: 8535226346
+> Operação realizada com sucesso: 8535226346
+79c78
+< Produto nÃ£o encontrado: 1234567890
+---
+> Produto não encontrado: 1234567890
+81c80
+< Procurando: IntroduÃ§Ã£o ao teste de software
+---
+> Procurando: Introdução ao teste de software
+84,85c83,84
+< CÃ³digo: 8535283528
+< TÃ­tulo: IntroduÃ§Ã£o ao teste de software
+---
+> Código: 8535283528
+> Título: Introdução ao teste de software
+88c87
+< EdiÃ§Ã£o: 2
+---
+> Edição: 2
+90c89
+< PÃ¡ginas: 448
+---
+> Páginas: 448
+93,94c92,93
+< OperaÃ§Ã£o de venda: 93624684725
+< OperaÃ§Ã£o realizada com sucesso: 93624684725
+---
+> Operação de venda: 93624684725
+> Operação realizada com sucesso: 93624684725
+96c95
+< OperaÃ§Ã£o de sumarizaÃ§Ã£o: 
+---
+> Operação de sumarização: 
+98,99c97,98
+< CÃ³digo: 8535283528
+< TÃ­tulo: IntroduÃ§Ã£o ao teste de software
+---
+> Código: 8535283528
+> Título: Introdução ao teste de software
+102c101
+< EdiÃ§Ã£o: 2
+---
+> Edição: 2
+104c103
+< PÃ¡ginas: 448
+---
+> Páginas: 448
+109,110c108,109
+< CÃ³digo: 8535226346
+< TÃ­tulo: IntroduÃ§Ã£o ao teste de software
+---
+> Código: 8535226346
+> Título: Introdução ao teste de software
+113c112
+< EdiÃ§Ã£o: 1
+---
+> Edição: 1
+115c114
+< PÃ¡ginas: 394
+---
+> Páginas: 394
+120,121c119,120
+< CÃ³digo: 8522104999
+< TÃ­tulo: IntroduÃ§Ã£o Ã¡ teoria da computaÃ§Ã£o
+---
+> Código: 8522104999
+> Título: Introdução á teoria da computação
+124c123
+< EdiÃ§Ã£o: 1
+---
+> Edição: 1
+126c125
+< PÃ¡ginas: 612
+---
+> Páginas: 612
+130c129
+< Quantidade de Livros: 131
+---
+> Quantidade de livros: 131
+133,134c132,133
+< CÃ³digo: 8579715172
+< TÃ­tulo: COLECAO MILTON NASCIMENTO
+---
+> Código: 8579715172
+> Título: COLECAO MILTON NASCIMENTO
+142,143c141,142
+< CÃ³digo: 93624684725
+< TÃ­tulo: Ray Of Light
+---
+> Código: 93624684725
+> Título: Ray Of Light
+153,154c152,153
+< CÃ³digo: 7899307921551
+< TÃ­tulo: Tinker Bell E O Monstro Da Terra Do Nunca
+---
+> Código: 7899307921551
+> Título: Tinker Bell E O Monstro Da Terra Do Nunca
+156c155
+< GÃªnero: AnimaÃ§Ã£o
+---
+> Gênero: Animação
+165,166c164
+< OperaÃ§Ã£o inserir DVD: 7899307921551
+< ***Erro: CÃ³digo jÃ¡ cadastrado: 7899307921551
+---
+> ***Erro: Código já cadastrado: 7899307921551
