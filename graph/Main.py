@@ -2,8 +2,8 @@ from Graph import Graph
 import sys
 
 def main() -> None:
-    mapa = Graph(file=sys.stdin)
-    print(mapa.no_dict)
+    map = Graph(file=sys.stdin)
+    map.visit_all() 
     
 if __name__ == "__main__":
     main()

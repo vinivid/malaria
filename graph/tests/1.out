@@ -1,0 +1,133 @@
+S.J.Rio_Preto para Limeira
+	Distancia: 310,0
+	Caminho:  --> São_Carlos --> Rio_Claro --> Limeira
+S.J.Rio_Preto para Rio_Claro
+	Distancia: 272,0
+	Caminho:  --> São_Carlos --> Rio_Claro
+S.J.Rio_Preto para Ribeirão_Preto
+	Distancia: 211,0
+	Caminho:  --> Ribeirão_Preto
+S.J.Rio_Preto para Mogi_Mirim
+	Distancia: 369,0
+	Caminho:  --> São_Carlos --> Rio_Claro --> Limeira --> Mogi_Mirim
+S.J.Rio_Preto para São_Carlos
+	Distancia: 207,0
+	Caminho:  --> São_Carlos
+S.J.Rio_Preto para Campinas
+	Distancia: 365,0
+	Caminho:  --> São_Carlos --> Rio_Claro --> Limeira --> Campinas
+---------------------------------------------
+Limeira para S.J.Rio_Preto
+	Distancia: 310,0
+	Caminho:  --> Rio_Claro --> São_Carlos --> S.J.Rio_Preto
+Limeira para Rio_Claro
+	Distancia: 38,0
+	Caminho:  --> Rio_Claro
+Limeira para Ribeirão_Preto
+	Distancia: 174,0
+	Caminho:  --> Ribeirão_Preto
+Limeira para Mogi_Mirim
+	Distancia: 59,0
+	Caminho:  --> Mogi_Mirim
+Limeira para São_Carlos
+	Distancia: 103,0
+	Caminho:  --> Rio_Claro --> São_Carlos
+Limeira para Campinas
+	Distancia: 55,0
+	Caminho:  --> Campinas
+---------------------------------------------
+Rio_Claro para S.J.Rio_Preto
+	Distancia: 272,0
+	Caminho:  --> São_Carlos --> S.J.Rio_Preto
+Rio_Claro para Limeira
+	Distancia: 38,0
+	Caminho:  --> Limeira
+Rio_Claro para Ribeirão_Preto
+	Distancia: 165,0
+	Caminho:  --> São_Carlos --> Ribeirão_Preto
+Rio_Claro para Mogi_Mirim
+	Distancia: 97,0
+	Caminho:  --> Limeira --> Mogi_Mirim
+Rio_Claro para São_Carlos
+	Distancia: 65,0
+	Caminho:  --> São_Carlos
+Rio_Claro para Campinas
+	Distancia: 93,0
+	Caminho:  --> Limeira --> Campinas
+---------------------------------------------
+Ribeirão_Preto para S.J.Rio_Preto
+	Distancia: 211,0
+	Caminho:  --> S.J.Rio_Preto
+Ribeirão_Preto para Limeira
+	Distancia: 174,0
+	Caminho:  --> Limeira
+Ribeirão_Preto para Rio_Claro
+	Distancia: 165,0
+	Caminho:  --> São_Carlos --> Rio_Claro
+Ribeirão_Preto para Mogi_Mirim
+	Distancia: 233,0
+	Caminho:  --> Limeira --> Mogi_Mirim
+Ribeirão_Preto para São_Carlos
+	Distancia: 100,0
+	Caminho:  --> São_Carlos
+Ribeirão_Preto para Campinas
+	Distancia: 229,0
+	Caminho:  --> Limeira --> Campinas
+---------------------------------------------
+Mogi_Mirim para S.J.Rio_Preto
+	Distancia: 369,0
+	Caminho:  --> Limeira --> Rio_Claro --> São_Carlos --> S.J.Rio_Preto
+Mogi_Mirim para Limeira
+	Distancia: 59,0
+	Caminho:  --> Limeira
+Mogi_Mirim para Rio_Claro
+	Distancia: 97,0
+	Caminho:  --> Limeira --> Rio_Claro
+Mogi_Mirim para Ribeirão_Preto
+	Distancia: 233,0
+	Caminho:  --> Limeira --> Ribeirão_Preto
+Mogi_Mirim para São_Carlos
+	Distancia: 162,0
+	Caminho:  --> Limeira --> Rio_Claro --> São_Carlos
+Mogi_Mirim para Campinas
+	Distancia: 61,0
+	Caminho:  --> Campinas
+---------------------------------------------
+São_Carlos para S.J.Rio_Preto
+	Distancia: 207,0
+	Caminho:  --> S.J.Rio_Preto
+São_Carlos para Limeira
+	Distancia: 103,0
+	Caminho:  --> Rio_Claro --> Limeira
+São_Carlos para Rio_Claro
+	Distancia: 65,0
+	Caminho:  --> Rio_Claro
+São_Carlos para Ribeirão_Preto
+	Distancia: 100,0
+	Caminho:  --> Ribeirão_Preto
+São_Carlos para Mogi_Mirim
+	Distancia: 162,0
+	Caminho:  --> Rio_Claro --> Limeira --> Mogi_Mirim
+São_Carlos para Campinas
+	Distancia: 158,0
+	Caminho:  --> Rio_Claro --> Limeira --> Campinas
+---------------------------------------------
+Campinas para S.J.Rio_Preto
+	Distancia: 365,0
+	Caminho:  --> Limeira --> Rio_Claro --> São_Carlos --> S.J.Rio_Preto
+Campinas para Limeira
+	Distancia: 55,0
+	Caminho:  --> Limeira
+Campinas para Rio_Claro
+	Distancia: 93,0
+	Caminho:  --> Limeira --> Rio_Claro
+Campinas para Ribeirão_Preto
+	Distancia: 229,0
+	Caminho:  --> Limeira --> Ribeirão_Preto
+Campinas para Mogi_Mirim
+	Distancia: 61,0
+	Caminho:  --> Mogi_Mirim
+Campinas para São_Carlos
+	Distancia: 158,0
+	Caminho:  --> Limeira --> Rio_Claro --> São_Carlos
+---------------------------------------------
